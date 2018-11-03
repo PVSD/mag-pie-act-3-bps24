@@ -30,20 +30,52 @@ public class Magpie3
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.length() == 0)
-		{
-			response = "Say something, please.";
-		}
-		else if (findKeyword(statement, "no") >= 0)
+		if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
 		}
-		else if (findKeyword(statement, "mother") >= 0
-				|| findKeyword(statement, "father") >= 0
-				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
+		else if (statement.indexOf("mother") >= 0
+				|| statement.indexOf("father") >= 0
+				|| statement.indexOf("sister") >= 0
+				|| statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (statement.indexOf("dog") >= 0
+				|| statement.indexOf("cat") >= 0
+				|| statement.indexOf("fish") >= 0
+				|| statement.indexOf("hamster") >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
+		else if (statement.indexOf("mr.p") >= 0
+				|| statement.indexOf("pennebacker") >= 0
+				|| statement.indexOf("mr.pennebacker") >= 0)
+		{
+			response = "He sounds like a good teacher.";
+		}
+		else if (statement.indexOf("pizza") >= 0
+				|| statement.indexOf("tacos") >= 0
+				|| statement.indexOf("pretzel") >= 0
+				|| statement.indexOf("steak") >= 0
+				|| statement.indexOf("fries") >= 0
+				|| statement.indexOf("fruit") >= 0
+				|| statement.indexOf("vegetable") >= 0
+				|| statement.indexOf("sauce") >= 0
+				|| statement.indexOf("ice cream") >= 0
+				|| statement.indexOf("cookies") >= 0
+				|| statement.indexOf("bennet") >= 0
+				|| statement.indexOf("candy") >= 0
+				|| statement.indexOf("bacon") >= 0
+				|| statement.indexOf("nuts") >= 0
+				|| statement.indexOf("cracker") >= 0
+				|| statement.indexOf("ham") >= 0)
+		{
+			response = "Oh, you are making me hungry!";
+		}
+		else if (statement.trim()== "")
+		{
+			response = "Say something please!";
 		}
 		else
 		{
@@ -165,6 +197,10 @@ public class Magpie3
 		}
 
 		return response;
+	}
+
+	private int getPSN(String str, String goal, int a){
+
 	}
 
 }
